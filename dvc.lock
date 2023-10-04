@@ -25,8 +25,23 @@ stages:
       md5: 9ccf3585aec7bebbcda79e01f2229267
       size: 6302
     outs:
-    - path: data/processed
+    - path: data/processed/ames_with_correct_types.pkl
       hash: md5
-      md5: bc6ab2d42e37e831c95edc59e2d00f66.dir
+      md5: 30fea9fb77cf6a63a8afd574bb470274
       size: 945364
-      nfiles: 1
+  clean:
+    cmd: python src/clean.py
+    deps:
+    - path: data/processed/ames_with_correct_types.pkl
+      hash: md5
+      md5: 30fea9fb77cf6a63a8afd574bb470274
+      size: 945364
+    - path: src/clean.py
+      hash: md5
+      md5: c7de4c3e99013fc47ee6404c8b1bd324
+      size: 9141
+    outs:
+    - path: data/processed/ames_clean.pkl
+      hash: md5
+      md5: c1f1528c7474d1c68644c1e36e86d0d2
+      size: 918677

@@ -11,4 +11,11 @@ stages:
     - data/raw/ames.csv
     - src/prepare.py
     outs:
-    - data/processed
+    - data/processed/ames_with_correct_types.pkl
+  clean:
+    cmd: python src/clean.py
+    deps:
+    - data/processed/ames_with_correct_types.pkl
+    - src/clean.py
+    outs:
+    - data/processed/ames_clean.pkl
