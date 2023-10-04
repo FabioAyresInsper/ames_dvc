@@ -13,3 +13,20 @@ stages:
       md5: 2a731301a92ba046a593da6b3f63c270.dir
       size: 1182303
       nfiles: 1
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - path: data/raw/ames.csv
+      hash: md5
+      md5: 3e1d75aff160ee903e05e2cf1a883777
+      size: 1182303
+    - path: src/prepare.py
+      hash: md5
+      md5: 9ccf3585aec7bebbcda79e01f2229267
+      size: 6302
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: bc6ab2d42e37e831c95edc59e2d00f66.dir
+      size: 945364
+      nfiles: 1

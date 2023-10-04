@@ -5,3 +5,10 @@ stages:
     - src/download.py
     outs:
     - data/raw
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - data/raw/ames.csv
+    - src/prepare.py
+    outs:
+    - data/processed
