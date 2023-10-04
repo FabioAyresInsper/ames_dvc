@@ -1,4 +1,4 @@
-name: ames
+name: ames_dvc
 dependencies:
   - python
   - pip
@@ -12,3 +12,7 @@ dependencies:
   - seaborn
   - scikit-learn
   - requests
+  - pip:
+    - dvc
+    - dvclive
+    
