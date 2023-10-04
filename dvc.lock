@@ -54,10 +54,45 @@ stages:
       size: 917695
     - path: src/featurize.py
       hash: md5
-      md5: b51d2c33487ff55f2484384610106fd0
-      size: 976
+      md5: 4f838c8257ac689429e40f670ecec71a
+      size: 1337
     outs:
-    - path: data/processed/ames_features.pkl
+    - path: data/processed/ames_features_test.pkl
       hash: md5
-      md5: 5799ca0db2f996d4bdb113635df97f54
-      size: 1452715
+      md5: 24e18d783e01111a3e9eab66113d3963
+      size: 373851
+    - path: data/processed/ames_features_train.pkl
+      hash: md5
+      md5: d9ffd97e3cc608c6eceba13743a44306
+      size: 1108185
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: data/processed/ames_features_train.pkl
+      hash: md5
+      md5: d9ffd97e3cc608c6eceba13743a44306
+      size: 1108185
+    - path: src/train.py
+      hash: md5
+      md5: 08ce252f4a21958c9d7e0db0d76edadb
+      size: 597
+    outs:
+    - path: data/models/linear_regression.pkl
+      hash: md5
+      md5: a1b297103452a292afbbf01349c93719
+      size: 6110
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - path: data/models/linear_regression.pkl
+      hash: md5
+      md5: a1b297103452a292afbbf01349c93719
+      size: 6110
+    - path: data/processed/ames_features_test.pkl
+      hash: md5
+      md5: 24e18d783e01111a3e9eab66113d3963
+      size: 373851
+    - path: src/evaluate.py
+      hash: md5
+      md5: c3378aac6a27e9f2b58819410530872f
+      size: 734

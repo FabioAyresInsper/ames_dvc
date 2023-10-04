@@ -25,4 +25,23 @@ stages:
     - data/processed/ames_clean.pkl
     - src/featurize.py
     outs:
-    - data/processed/ames_features.pkl
+    - data/processed/ames_features_test.pkl
+    - data/processed/ames_features_train.pkl
+  train:
+    cmd: python src/train.py
+    deps:
+    - data/processed/ames_features_train.pkl
+    - src/train.py
+    outs:
+    - data/models/linear_regression.pkl
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - data/models/linear_regression.pkl
+    - data/processed/ames_features_test.pkl
+    - src/evaluate.py
+metrics:
+- metrics/metrics.json
+plots:
+- metrics/plots/metrics:
+    x: step
