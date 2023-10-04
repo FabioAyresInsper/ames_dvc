@@ -7,3 +7,14 @@ stages:
       hash: md5
       md5: 718d6b83fab3b0aab8e0222873bd83cc
       size: 947
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - path: data/raw/ames.csv
+      hash: md5
+      md5: 3e1d75aff160ee903e05e2cf1a883777
+      size: 1182303
+    - path: src/prepare.py
+      hash: md5
+      md5: 9ccf3585aec7bebbcda79e01f2229267
+      size: 6302

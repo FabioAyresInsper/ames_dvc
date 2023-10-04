@@ -3,3 +3,8 @@ stages:
     cmd: python src/download.py
     deps:
     - src/download.py
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - data/raw/ames.csv
+    - src/prepare.py
