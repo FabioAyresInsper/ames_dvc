@@ -38,10 +38,26 @@ stages:
       size: 945364
     - path: src/clean.py
       hash: md5
-      md5: c7de4c3e99013fc47ee6404c8b1bd324
-      size: 9141
+      md5: 021fc4a864d38b37029f413f316b229f
+      size: 9167
     outs:
     - path: data/processed/ames_clean.pkl
       hash: md5
-      md5: c1f1528c7474d1c68644c1e36e86d0d2
-      size: 918677
+      md5: cbf83632be36bfe22d68a73150dc8905
+      size: 917695
+  featurize:
+    cmd: python src/featurize.py
+    deps:
+    - path: data/processed/ames_clean.pkl
+      hash: md5
+      md5: cbf83632be36bfe22d68a73150dc8905
+      size: 917695
+    - path: src/featurize.py
+      hash: md5
+      md5: b51d2c33487ff55f2484384610106fd0
+      size: 976
+    outs:
+    - path: data/processed/ames_features.pkl
+      hash: md5
+      md5: 5799ca0db2f996d4bdb113635df97f54
+      size: 1452715

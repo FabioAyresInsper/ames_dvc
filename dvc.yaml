@@ -19,3 +19,10 @@ stages:
     - src/clean.py
     outs:
     - data/processed/ames_clean.pkl
+  featurize:
+    cmd: python src/featurize.py
+    deps:
+    - data/processed/ames_clean.pkl
+    - src/featurize.py
+    outs:
+    - data/processed/ames_features.pkl

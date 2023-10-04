@@ -296,6 +296,8 @@ def main():
     for col in data.select_dtypes('category').columns:
         data[col] = data[col].cat.remove_unused_categories()
 
+    data = data.dropna()
+
     clean_data_path = DATA_DIR / 'processed' / 'ames_clean.pkl'
 
     with open(clean_data_path, 'wb') as file:
