@@ -1,0 +1,5 @@
+outs:
+- md5: 3e1d75aff160ee903e05e2cf1a883777
+  size: 1182303
+  hash: md5
+  path: ames.csv

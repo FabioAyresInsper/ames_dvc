@@ -25,7 +25,7 @@ def download_data(data_dir):
 
 
 def main():
-    DATA_DIR = pathlib.Path.cwd().parents[1] / 'data_repo' / 'ames_housing'
+    DATA_DIR = pathlib.Path(__file__).parents[1] / 'data'
     download_data(DATA_DIR)
 
 
