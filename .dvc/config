@@ -1,4 +1,0 @@
-[core]
-    remote = ames
-['remote "ames"']
-    url = /home/fjayres/Dropbox/Insper/Disciplinas/MachineLearning-EngComp/Sandbox/data_repo/ames_housing/
